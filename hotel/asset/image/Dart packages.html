@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<!-- saved from url=(0016)https://pub.dev/ -->
+<html lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style class="darkreader darkreader--fallback" media="screen"></style><style class="darkreader darkreader--text" media="screen"></style><style class="darkreader darkreader--invert" media="screen">.jfk-bubble.gtx-bubble, .captcheck_answer_label > input + img, embed[type="application/pdf"] {
+    filter: invert(100%) hue-rotate(180deg) contrast(90%) !important;
+}</style><style class="darkreader darkreader--inline" media="screen">[data-darkreader-inline-bgcolor] {
+  background-color: var(--darkreader-inline-bgcolor) !important;
+}
+[data-darkreader-inline-bgimage] {
+  background-image: var(--darkreader-inline-bgimage) !important;
+}
+[data-darkreader-inline-border] {
+  border-color: var(--darkreader-inline-border) !important;
+}
+[data-darkreader-inline-border-bottom] {
+  border-bottom-color: var(--darkreader-inline-border-bottom) !important;
+}
+[data-darkreader-inline-border-left] {
+  border-left-color: var(--darkreader-inline-border-left) !important;
+}
+[data-darkreader-inline-border-right] {
+  border-right-color: var(--darkreader-inline-border-right) !important;
+}
+[data-darkreader-inline-border-top] {
+  border-top-color: var(--darkreader-inline-border-top) !important;
+}
+[data-darkreader-inline-boxshadow] {
+  box-shadow: var(--darkreader-inline-boxshadow) !important;
+}
+[data-darkreader-inline-color] {
+  color: var(--darkreader-inline-color) !important;
+}
+[data-darkreader-inline-fill] {
+  fill: var(--darkreader-inline-fill) !important;
+}
+[data-darkreader-inline-stroke] {
+  stroke: var(--darkreader-inline-stroke) !important;
+}
+[data-darkreader-inline-outline] {
+  outline-color: var(--darkreader-inline-outline) !important;
+}
+[data-darkreader-inline-stopcolor] {
+  stop-color: var(--darkreader-inline-stopcolor) !important;
+}</style><style class="darkreader darkreader--variables" media="screen">:root {
+   --darkreader-neutral-background: #131516;
+   --darkreader-neutral-text: #d8d4cf;
+   --darkreader-selection-background: #004daa;
+   --darkreader-selection-text: #e8e6e3;
+}</style><script type="text/javascript" async="" src="./Dart packages_files/analytics.js.download"></script><script src="./Dart packages_files/cb=gapi.loaded_0" async=""></script><script class="darkreader darkreader--proxy">(function injectProxy() {
+        document.dispatchEvent(
+            new CustomEvent("__darkreader__inlineScriptsAllowed")
+        );
+        const addRuleDescriptor = Object.getOwnPropertyDescriptor(
+            CSSStyleSheet.prototype,
+            "addRule"
+        );
+        const insertRuleDescriptor = Object.getOwnPropertyDescriptor(
+            CSSStyleSheet.prototype,
+            "insertRule"
+        );
+        const deleteRuleDescriptor = Object.getOwnPropertyDescriptor(
+            CSSStyleSheet.prototype,
+            "deleteRule"
+        );
+        const removeRuleDescriptor = Object.getOwnPropertyDescriptor(
+            CSSStyleSheet.prototype,
+            "removeRule"
+        );
+        const cleanUp = () => {
+            Object.defineProperty(
+                CSSStyleSheet.prototype,
+                "addRule",
+                addRuleDescriptor
+            );
+            Object.defineProperty(
+                CSSStyleSheet.prototype,
+                "insertRule",
+                insertRuleDescriptor
+            );
+            Object.defineProperty(
+                CSSStyleSheet.prototype,
+                "deleteRule",
+                deleteRuleDescriptor
+            );
+            Object.defineProperty(
+                CSSStyleSheet.prototype,
+                "removeRule",
+                removeRuleDescriptor
+            );
+            document.removeEventListener("__darkreader__cleanUp", cleanUp);
+            document.removeEventListener(
+                "__darkreader__addUndefinedResolver",
+                (e) => addUndefinedResolver(e)
+            );
+        };
+        const addUndefinedResolver = (e) => {
+            customElements.whenDefined(e.detail.tag).then(() => {
+                document.dispatchEvent(
+                    new CustomEvent("__darkreader__isDefined", {
+                        detail: {tag: e.detail.tag}
+                    })
+                );
+            });
+        };
+        document.addEventListener("__darkreader__cleanUp", cleanUp);
+        document.addEventListener("__darkreader__addUndefinedResolver", (e) =>
+            addUndefinedResolver(e)
+        );
+        const updateSheetEvent = new Event("__darkreader__updateSheet");
+        function proxyAddRule(selector, style, index) {
+            addRuleDescriptor.value.call(this, selector, style, index);
+            if (
+                this.ownerNode &&
+                !this.ownerNode.classList.contains("darkreader")
+            ) {
+                this.ownerNode.dispatchEvent(updateSheetEvent);
+            }
+            return -1;
+        }
+        function proxyInsertRule(rule, index) {
+            const returnValue = insertRuleDescriptor.value.call(
+                this,
+                rule,
+                index
+            );
+            if (
+                this.ownerNode &&
+                !this.ownerNode.classList.contains("darkreader")
+            ) {
+                this.ownerNode.dispatchEvent(updateSheetEvent);
+            }
+            return returnValue;
+        }
+        function proxyDeleteRule(index) {
+            deleteRuleDescriptor.value.call(this, index);
+            if (
+                this.ownerNode &&
+                !this.ownerNode.classList.contains("darkreader")
+            ) {
+                this.ownerNode.dispatchEvent(updateSheetEvent);
+            }
+        }
+        function proxyRemoveRule(index) {
+            removeRuleDescriptor.value.call(this, index);
+            if (
+                this.ownerNode &&
+                !this.ownerNode.classList.contains("darkreader")
+            ) {
+                this.ownerNode.dispatchEvent(updateSheetEvent);
+            }
+        }
+        Object.defineProperty(
+            CSSStyleSheet.prototype,
+            "addRule",
+            Object.assign({}, addRuleDescriptor, {value: proxyAddRule})
+        );
+        Object.defineProperty(
+            CSSStyleSheet.prototype,
+            "insertRule",
+            Object.assign({}, insertRuleDescriptor, {value: proxyInsertRule})
+        );
+        Object.defineProperty(
+            CSSStyleSheet.prototype,
+            "deleteRule",
+            Object.assign({}, deleteRuleDescriptor, {value: proxyDeleteRule})
+        );
+        Object.defineProperty(
+            CSSStyleSheet.prototype,
+            "removeRule",
+            Object.assign({}, removeRuleDescriptor, {value: proxyRemoveRule})
+        );
+    })()</script><style class="darkreader darkreader--user-agent" media="screen">html {
+    background-color: #181a1b !important;
+}
+html, body, input, textarea, select, button {
+    background-color: #181a1b;
+}
+html, body, input, textarea, select, button {
+    border-color: #736b5e;
+    color: #e8e6e3;
+}
+a {
+    color: #3391ff;
+}
+table {
+    border-color: #545b5e;
+}
+::placeholder {
+    color: #b2aba1;
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    background-color: #555b00 !important;
+    color: #e8e6e3 !important;
+}
+::-webkit-scrollbar {
+    background-color: #202324;
+    color: #aba499;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #454a4d;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #575e62;
+}
+::-webkit-scrollbar-thumb:active {
+    background-color: #484e51;
+}
+::-webkit-scrollbar-corner {
+    background-color: #181a1b;
+}
+* {
+    scrollbar-color: #202324 #454a4d;
+}
+::selection {
+    background-color: #004daa !important;
+    color: #e8e6e3 !important;
+}
+::-moz-selection {
+    background-color: #004daa !important;
+    color: #e8e6e3 !important;
+}</style>
+  <script async="async" src="./Dart packages_files/js"></script>
+  <script src="./Dart packages_files/gtag.js.download"></script><meta name="darkreader" content="6f0d46027e8ff80ef284fedb14211cb9"><style class="darkreader darkreader--override" media="screen">.vimvixen-hint {
+    background-color: #7b5300 !important;
+    border-color: #d8b013 !important;
+    color: #f3e8c8 !important;
+}
+::placeholder {
+    opacity: 0.5 !important;
+}</style>
+
+  
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Twitter tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@dart_lang">
+  <meta name="twitter:description" content="Pub is the package manager for the Dart programming language, containing reusable libraries &amp; packages for Flutter, AngularDart, and general Dart programs.">
+  <meta name="twitter:image" content="https://pub.dev/static/img/pub-dev-icon-cover-image.png?hash=vg86r2r3mbs62hiv4ldop0ife5um2g5g">
+
+  <!-- Facebook OG tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Dart packages">
+  <meta property="og:title" content="Dart packages">
+  <meta property="og:description" content="Pub is the package manager for the Dart programming language, containing reusable libraries &amp; packages for Flutter, AngularDart, and general Dart programs.">
+  <meta property="og:image" content="https://pub.dev/static/img/pub-dev-icon-cover-image.png?hash=vg86r2r3mbs62hiv4ldop0ife5um2g5g">
+  <meta property="og:url" content="https://pub.dev/">
+
+  <title>Dart packages</title>
+  <link href="./Dart packages_files/css" rel="stylesheet">
+  <meta content="/static/img/pub-dev-icon-cover-image.png?hash=vg86r2r3mbs62hiv4ldop0ife5um2g5g">
+  <link rel="shortcut icon" href="https://pub.dev/favicon.ico?hash=nk4nss8c7444fg0chird9erqef2vkhb8">
+  <link rel="search" type="application/opensearchdescription+xml" title="Dart packages" href="https://pub.dev/static/osd.xml?hash=uhkvaq6tn5ujmk0so48em6cukeb08c2d">
+  <link rel="canonical" href="https://pub.dev/">
+  <meta name="description" content="Pub is the package manager for the Dart programming language, containing reusable libraries &amp; packages for Flutter, AngularDart, and general Dart programs.">
+  <link rel="alternate" type="application/atom+xml" title="Updated Packages Feed for Pub" href="https://pub.dev/feed.atom">
+  <link href="./Dart packages_files/material-components-web.min.css" rel="stylesheet" type="text/css"><style class="darkreader darkreader--sync" media="screen"></style>
+  <link href="./Dart packages_files/github.css" rel="stylesheet"><style class="darkreader darkreader--sync" media="screen"></style>
+  <link href="./Dart packages_files/github-markdown.css" rel="stylesheet" type="text/css"><style class="darkreader darkreader--sync" media="screen"></style>
+  <link href="./Dart packages_files/style.css" rel="stylesheet" type="text/css"><style class="darkreader darkreader--sync" media="screen"></style>
+  <script src="./Dart packages_files/material-components-web.min.js.download" defer="defer"></script>
+  <script src="./Dart packages_files/script.dart.js.download" defer="defer"></script>
+  <meta name="google-signin-client_id" content="818368855108-e8skaopm5ih5nbb82vhh66k7ft5o7dn3.apps.googleusercontent.com">
+  <script src="./Dart packages_files/platform.js.download" defer="defer" gapi_processed="true"></script>
+<style type="text/css"></style><style class="darkreader darkreader--sync" media="screen"></style></head>
+<body class="page-landing">
+
+<div class="site-header">
+  <button class="hamburger"></button>
+  <div class="site-header-space"></div>
+  <div class="site-header-mask"></div>
+  <div class="site-header-nav scroll-container">
+    <div class="nav-login-container">
+      <button class="nav-main-button link" id="-account-login">Sign in</button>
+    </div>
+    <div class="nav-container nav-help-container hoverable">
+      <button class="nav-main-button">Help</button>
+      <div class="nav-hover-popup">
+        <div class="nav-table-columns">
+          <div class="nav-table-column">
+            <h3>Pub.dev</h3>
+            <a class="nav-link" target="_blank" rel="noopener" href="https://pub.dev/help/search">Searching for packages</a>
+            <a class="nav-link" target="_blank" rel="noopener" href="https://pub.dev/help/scoring">Package scoring and pub points</a>
+          </div>
+          <div class="nav-table-column">
+            <h3>Flutter</h3>
+            <a class="nav-link" target="_blank" rel="noopener" href="https://flutter.io/using-packages/">Using packages</a>
+            <a class="nav-link" target="_blank" rel="noopener" href="https://flutter.io/developing-packages/">Developing packages and plugins</a>
+            <a class="nav-link" target="_blank" rel="noopener" href="https://dart.dev/tools/pub/publishing">Publishing a package</a>
+          </div>
+          <div class="nav-table-column">
+            <h3>Dart</h3>
+            <a class="nav-link" target="_blank" rel="noopener" href="https://dart.dev/tools/pub/get-started">Using packages</a>
+            <a class="nav-link" target="_blank" rel="noopener" href="https://dart.dev/tools/pub/publishing">Publishing a package</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="nav-container nav-help-container-mobile foldable">
+      <h3 class="foldable-button">Pub.dev <img class="foldable-icon" src="./Dart packages_files/nav-mobile-foldable-icon.svg"></h3>
+      <div class="foldable-content">
+        <a class="nav-link" target="_blank" rel="noopener" href="https://pub.dev/help/search">Searching for packages</a>
+        <a class="nav-link" target="_blank" rel="noopener" href="https://pub.dev/help/scoring">Package scoring and pub points</a>
+      </div>
+    </div>
+    <div class="nav-container nav-help-container-mobile foldable">
+      <h3 class="foldable-button">Flutter <img class="foldable-icon" src="./Dart packages_files/nav-mobile-foldable-icon.svg"></h3>
+      <div class="foldable-content">
+        <a class="nav-link" target="_blank" rel="noopener" href="https://flutter.io/using-packages/">Using packages</a>
+        <a class="nav-link" target="_blank" rel="noopener" href="https://flutter.io/developing-packages/">Developing packages and plugins</a>
+        <a class="nav-link" target="_blank" rel="noopener" href="https://dart.dev/tools/pub/publishing">Publishing a package</a>
+      </div>
+    </div>
+    <div class="nav-container nav-help-container-mobile foldable">
+      <h3 class="foldable-button">Dart <img class="foldable-icon" src="./Dart packages_files/nav-mobile-foldable-icon.svg"></h3>
+      <div class="foldable-content">
+        <a class="nav-link" target="_blank" rel="noopener" href="https://dart.dev/tools/pub/get-started">Using packages</a>
+        <a class="nav-link" target="_blank" rel="noopener" href="https://dart.dev/tools/pub/publishing">Publishing a package</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="banner-container">
+</div>
+
+<div class="_banner-bg">
+  <div class="container home-banner">
+
+    <h2 class="_visuallyhidden">pub.dev package manager</h2>
+    <img class="logo" src="./Dart packages_files/pub-dev-logo.svg" alt="pub.dev package manager">
+
+  
+<form class="search-bar banner-item" action="https://pub.dev/packages">
+  <input class="input" name="q" placeholder="Search packages" autocomplete="on" autofocus="autofocus">
+  <button class="icon"></button>
+  
+  <input id="-search-discontinued-field" type="hidden" name="discontinued" value="1" disabled="disabled">
+  <input id="-search-unlisted-field" type="hidden" name="unlisted" value="1" disabled="disabled">
+  <input id="-search-prerelease-null-safe-field" type="hidden" name="prerelease-null-safe" value="1" disabled="disabled">
+</form>
+
+
+    <p class="text">Find and use packages to build <a target="_blank" rel="noopener" href="https://dart.dev/">Dart</a> and <a target="_blank" rel="noopener" href="https://flutter.dev/">Flutter</a> apps.</p>
+  </div>
+</div>
+
+<main class="landing-main">
+
+<div class="home-block home-block-ff">
+  <div class="home-block-content">
+    <h1 class="home-block-title">Flutter Favorites</h1>
+    <p class="home-block-context-info">
+      Packages that demonstrate the
+      <a target="_blank" rel="noopener" href="https://flutter.dev/docs/development/packages-and-plugins/favorites">highest levels of quality</a>,
+      selected by the Flutter Ecosystem Committee
+    </p>
+    
+<div class="mini-list">
+  <div class="mini-list-item">
+    <a class="mini-list-item-title" href="https://pub.dev/packages/rxdart"><h3>rxdart</h3></a>
+    <div class="mini-list-item-body">
+      <p class="mini-list-item-description">RxDart is an implementation of the popular reactiveX api for asynchronous programming, leveraging the native Dart Streams api.
+</p>
+    </div>
+    <div class="mini-list-item-footer">
+        <div class="mini-list-item-publisher">
+          <img class="publisher-badge" src="./Dart packages_files/verified-publisher-gray.svg" title="Published by a pub.dev verified publisher">
+          <a class="publisher-link" href="https://pub.dev/publishers/fluttercommunity.dev">fluttercommunity.dev</a>
+        </div>
+    </div>
+  </div>
+  <div class="mini-list-item">
+    <a class="mini-list-item-title" href="https://pub.dev/packages/flutter_slidable"><h3>flutter_slidable</h3></a>
+    <div class="mini-list-item-body">
+      <p class="mini-list-item-description">A Flutter implementation of slidable list item with directional slide actions that can be dismissed.</p>
+    </div>
+    <div class="mini-list-item-footer">
+        <div class="mini-list-item-publisher">
+          <img class="publisher-badge" src="./Dart packages_files/verified-publisher-gray.svg" title="Published by a pub.dev verified publisher">
+          <a class="publisher-link" href="https://pub.dev/publishers/romainrastel.com">romainrastel.com</a>
+        </div>
+    </div>
+  </div>
+  <div class="mini-list-item">
+    <a class="mini-list-item-title" href="https://pub.dev/packages/geolocator"><h3>geolocator</h3></a>
+    <div class="mini-list-item-body">
+      <p class="mini-list-item-description">Geolocation plugin for Flutter. This plugin provides a cross-platform (iOS, Android) API for generic location (GPS etc.) functions.</p>
+    </div>
+    <div class="mini-list-item-footer">
+        <div class="mini-list-item-publisher">
+          <img class="publisher-badge" src="./Dart packages_files/verified-publisher-gray.svg" title="Published by a pub.dev verified publisher">
+          <a class="publisher-link" href="https://pub.dev/publishers/baseflow.com">baseflow.com</a>
+        </div>
+    </div>
+  </div>
+  <div class="mini-list-item">
+    <a class="mini-list-item-title" href="https://pub.dev/packages/package_info"><h3>package_info</h3></a>
+    <div class="mini-list-item-body">
+      <p class="mini-list-item-description">Flutter plugin for querying information about the application package, such as CFBundleVersion on iOS or versionCode on Android.</p>
+    </div>
+    <div class="mini-list-item-footer">
+        <div class="mini-list-item-publisher">
+          <img class="publisher-badge" src="./Dart packages_files/verified-publisher-gray.svg" title="Published by a pub.dev verified publisher">
+          <a class="publisher-link" href="https://pub.dev/publishers/flutter.dev">flutter.dev</a>
+        </div>
+    </div>
+  </div>
+</div>
+
+    <div class="home-block-view-all">
+      <a class="home-block-view-all-link" href="https://pub.dev/flutter/favorites">View all</a>
+    </div>
+  </div>
+</div>
+
+<div class="home-block home-block-mp">
+  <div class="home-block-image">
+    <img src="./Dart packages_files/landing-01.png">
+  </div>
+  <div class="home-block-content">
+    <h1 class="home-block-title">Most popular packages</h1>
+    <p class="home-block-context-info">The most downloaded packages over the past 60 days</p>
+    
+<div class="mini-list">
+  <div class="mini-list-item">
+    <a class="mini-list-item-title" href="https://pub.dev/packages/http"><h3>http</h3></a>
+    <div class="mini-list-item-body">
+      <p class="mini-list-item-description">A composable, multi-platform, Future-based API for HTTP requests.</p>
+    </div>
+    <div class="mini-list-item-footer">
+        <div class="mini-list-item-publisher">
+          <img class="publisher-badge" src="./Dart packages_files/verified-publisher-gray.svg" title="Published by a pub.dev verified publisher">
+          <a class="publisher-link" href="https://pub.dev/publishers/dart.dev">dart.dev</a>
+        </div>
+    </div>
+  </div>
+  <div class="mini-list-item">
+    <a class="mini-list-item-title" href="https://pub.dev/packages/logging"><h3>logging</h3></a>
+    <div class="mini-list-item-body">
+      <p class="mini-list-item-description">Provides APIs for debugging and error logging. This library introduces abstractions similar to those used in other languages, such as the Closure JS Logger and java.util.logging.Logger.</p>
+    </div>
+    <div class="mini-list-item-footer">
+    </div>
+  </div>
+  <div class="mini-list-item">
+    <a class="mini-list-item-title" href="https://pub.dev/packages/typed_data"><h3>typed_data</h3></a>
+    <div class="mini-list-item-body">
+      <p class="mini-list-item-description">Utility functions and classes related to the dart:typed_data library.</p>
+    </div>
+    <div class="mini-list-item-footer">
+        <div class="mini-list-item-publisher">
+          <img class="publisher-badge" src="./Dart packages_files/verified-publisher-gray.svg" title="Published by a pub.dev verified publisher">
+          <a class="publisher-link" href="https://pub.dev/publishers/dart.dev">dart.dev</a>
+        </div>
+    </div>
+  </div>
+  <div class="mini-list-item">
+    <a class="mini-list-item-title" href="https://pub.dev/packages/octo_image"><h3>octo_image</h3></a>
+    <div class="mini-list-item-body">
+      <p class="mini-list-item-description">A multifunctional Flutter image widget. Supports placeholders, error widgets and image transformers with fading.</p>
+    </div>
+    <div class="mini-list-item-footer">
+        <div class="mini-list-item-publisher">
+          <img class="publisher-badge" src="./Dart packages_files/verified-publisher-gray.svg" title="Published by a pub.dev verified publisher">
+          <a class="publisher-link" href="https://pub.dev/publishers/baseflow.com">baseflow.com</a>
+        </div>
+    </div>
+  </div>
+  <div class="mini-list-item">
+    <a class="mini-list-item-title" href="https://pub.dev/packages/quiver"><h3>quiver</h3></a>
+    <div class="mini-list-item-body">
+      <p class="mini-list-item-description">Quiver is a set of utility libraries for Dart that makes using many Dart libraries easier and more convenient, or adds additional functionality.</p>
+    </div>
+    <div class="mini-list-item-footer">
+    </div>
+  </div>
+  <div class="mini-list-item">
+    <a class="mini-list-item-title" href="https://pub.dev/packages/clock"><h3>clock</h3></a>
+    <div class="mini-list-item-body">
+      <p class="mini-list-item-description">A fakeable wrapper for dart:core clock APIs</p>
+    </div>
+    <div class="mini-list-item-footer">
+    </div>
+  </div>
+</div>
+
+    <div class="home-block-view-all">
+      <a class="home-block-view-all-link" href="https://pub.dev/packages?sort=popularity">View all</a>
+    </div>
+  </div>
+</div>
+
+<div class="home-block home-block-tf">
+  <div class="home-block-content">
+    <h1 class="home-block-title">Top Flutter packages</h1>
+    <p class="home-block-context-info">Top packages that extend Flutter with new features</p>
+    
+<div class="mini-list">
+  <div class="mini-list-item">
+    <a class="mini-list-item-title" href="https://pub.dev/packages/firebase_core"><h3>firebase_core</h3></a>
+    <div class="mini-list-item-body">
+      <p class="mini-list-item-description">Flutter plugin for Firebase Core, enabling connecting to multiple Firebase apps.</p>
+    </div>
+    <div class="mini-list-item-footer">
+        <div class="mini-list-item-publisher">
+          <img class="publisher-badge" src="./Dart packages_files/verified-publisher-gray.svg" title="Published by a pub.dev verified publisher">
+          <a class="publisher-link" href="https://pub.dev/publishers/firebase.google.com">firebase.google.com</a>
+        </div>
+    </div>
+  </div>
+  <div class="mini-list-item">
+    <a class="mini-list-item-title" href="https://pub.dev/packages/stacked"><h3>stacked</h3></a>
+    <div class="mini-list-item-body">
+      <p class="mini-list-item-description">An architecture and widgets for an MVVM inspired architecture in Flutter. It provides common functionalities required to build a large application in a understandable manner.</p>
+    </div>
+    <div class="mini-list-item-footer">
+        <div class="mini-list-item-publisher">
+          <img class="publisher-badge" src="./Dart packages_files/verified-publisher-gray.svg" title="Published by a pub.dev verified publisher">
+          <a class="publisher-link" href="https://pub.dev/publishers/filledstacks.com">filledstacks.com</a>
+        </div>
+    </div>
+  </div>
+  <div class="mini-list-item">
+    <a class="mini-list-item-title" href="https://pub.dev/packages/step_progress_indicator"><h3>step_progress_indicator</h3></a>
+    <div class="mini-list-item-body">
+      <p class="mini-list-item-description">Bar indicator made of a series of selected and unselected steps</p>
+    </div>
+    <div class="mini-list-item-footer">
+        <div class="mini-list-item-publisher">
+          <img class="publisher-badge" src="./Dart packages_files/verified-publisher-gray.svg" title="Published by a pub.dev verified publisher">
+          <a class="publisher-link" href="https://pub.dev/publishers/sandromaglione.com">sandromaglione.com</a>
+        </div>
+    </div>
+  </div>
+  <div class="mini-list-item">
+    <a class="mini-list-item-title" href="https://pub.dev/packages/numberpicker"><h3>numberpicker</h3></a>
+    <div class="mini-list-item-body">
+      <p class="mini-list-item-description">NumberPicker is a widget allowing user to choose numbers by scrolling spinners.</p>
+    </div>
+    <div class="mini-list-item-footer">
+    </div>
+  </div>
+  <div class="mini-list-item">
+    <a class="mini-list-item-title" href="https://pub.dev/packages/google_fonts"><h3>google_fonts</h3></a>
+    <div class="mini-list-item-body">
+      <p class="mini-list-item-description">A package to include fonts from fonts.google.com in your Flutter app.</p>
+    </div>
+    <div class="mini-list-item-footer">
+        <div class="mini-list-item-publisher">
+          <img class="publisher-badge" src="./Dart packages_files/verified-publisher-gray.svg" title="Published by a pub.dev verified publisher">
+          <a class="publisher-link" href="https://pub.dev/publishers/material.io">material.io</a>
+        </div>
+    </div>
+  </div>
+  <div class="mini-list-item">
+    <a class="mini-list-item-title" href="https://pub.dev/packages/keyboard_actions"><h3>keyboard_actions</h3></a>
+    <div class="mini-list-item-body">
+      <p class="mini-list-item-description">Now you can add features to the Android / iOS keyboard in a very simple way.</p>
+    </div>
+    <div class="mini-list-item-footer">
+        <div class="mini-list-item-publisher">
+          <img class="publisher-badge" src="./Dart packages_files/verified-publisher-gray.svg" title="Published by a pub.dev verified publisher">
+          <a class="publisher-link" href="https://pub.dev/publishers/diegoveloper.com">diegoveloper.com</a>
+        </div>
+    </div>
+  </div>
+</div>
+
+    <div class="home-block-view-all">
+      <a class="home-block-view-all-link" href="https://pub.dev/flutter/packages">View all</a>
+    </div>
+  </div>
+  <div class="home-block-image">
+    <img src="./Dart packages_files/landing-02.png">
+  </div>
+</div>
+
+<div class="home-block home-block-td">
+  <div class="home-block-image">
+    <img src="./Dart packages_files/landing-03.png">
+  </div>
+  <div class="home-block-content">
+    <h1 class="home-block-title">Top Dart packages</h1>
+    <p class="home-block-context-info">Top packages for any Dart-based app or program</p>
+    
+<div class="mini-list">
+  <div class="mini-list-item">
+    <a class="mini-list-item-title" href="https://pub.dev/packages/riverpod"><h3>riverpod</h3></a>
+    <div class="mini-list-item-body">
+      <p class="mini-list-item-description">A simple way to access state from anywhere in your application while robust and testable.
+</p>
+    </div>
+    <div class="mini-list-item-footer">
+    </div>
+  </div>
+  <div class="mini-list-item">
+    <a class="mini-list-item-title" href="https://pub.dev/packages/maps_toolkit"><h3>maps_toolkit</h3></a>
+    <div class="mini-list-item-body">
+      <p class="mini-list-item-description">Maps toolkit - geo-measurements utils - area of polygon, distance between point, heading and offset between points (port of SphericalUtil, PolyUtil from `android-maps-utils`).</p>
+    </div>
+    <div class="mini-list-item-footer">
+        <div class="mini-list-item-publisher">
+          <img class="publisher-badge" src="./Dart packages_files/verified-publisher-gray.svg" title="Published by a pub.dev verified publisher">
+          <a class="publisher-link" href="https://pub.dev/publishers/kb-apps.com">kb-apps.com</a>
+        </div>
+    </div>
+  </div>
+  <div class="mini-list-item">
+    <a class="mini-list-item-title" href="https://pub.dev/packages/archive"><h3>archive</h3></a>
+    <div class="mini-list-item-body">
+      <p class="mini-list-item-description">Provides encoders and decoders for various archive and compression formats such as zip, tar, bzip2, gzip, and zlib.</p>
+    </div>
+    <div class="mini-list-item-footer">
+    </div>
+  </div>
+  <div class="mini-list-item">
+    <a class="mini-list-item-title" href="https://pub.dev/packages/universal_html"><h3>universal_html</h3></a>
+    <div class="mini-list-item-body">
+      <p class="mini-list-item-description">A 'dart:html' that works in all platforms, including Flutter and server-side. Eases cross-platform development and other HTML / XML processing.</p>
+    </div>
+    <div class="mini-list-item-footer">
+        <div class="mini-list-item-publisher">
+          <img class="publisher-badge" src="./Dart packages_files/verified-publisher-gray.svg" title="Published by a pub.dev verified publisher">
+          <a class="publisher-link" href="https://pub.dev/publishers/dint.dev">dint.dev</a>
+        </div>
+    </div>
+  </div>
+  <div class="mini-list-item">
+    <a class="mini-list-item-title" href="https://pub.dev/packages/oauth2"><h3>oauth2</h3></a>
+    <div class="mini-list-item-body">
+      <p class="mini-list-item-description">A client library for authenticating with a remote service via OAuth2 on behalf of a user, and making authorized HTTP requests with the user's OAuth2 credentials.</p>
+    </div>
+    <div class="mini-list-item-footer">
+    </div>
+  </div>
+  <div class="mini-list-item">
+    <a class="mini-list-item-title" href="https://pub.dev/packages/http_auth"><h3>http_auth</h3></a>
+    <div class="mini-list-item-body">
+      <p class="mini-list-item-description">Dart http middleware for HTTP Basic and Digest authentication</p>
+    </div>
+    <div class="mini-list-item-footer">
+    </div>
+  </div>
+</div>
+
+    <div class="home-block-view-all">
+      <a class="home-block-view-all-link" href="https://pub.dev/dart/packages">View all</a>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<footer class="site-footer">
+  <a class="link" href="https://dart.dev/">Dart language</a>
+  <a class="link sep" href="https://pub.dev/policy">Policy</a>
+  <a class="link sep" href="https://www.google.com/intl/en/policies/terms/">Terms</a>
+  <a class="link sep" href="https://pub.dev/security">Security</a>
+  <a class="link sep" href="https://www.google.com/intl/en/policies/privacy/">Privacy</a>
+  <a class="link sep" href="https://pub.dev/help">Help</a>
+  <a class="link sep icon" href="https://pub.dev/feed.atom">
+    <img src="./Dart packages_files/rss-feed-icon.svg" class="inline-icon" alt="RSS/atom feed" title="RSS/atom feed">
+  </a>
+  <a class="link icon github_issue" href="https://github.com/dart-lang/pub-dev/issues/new?body=URL%3A+https%3A%2F%2Fpub.dev%2F%0A%0A%3CDescribe+your+issue+or+suggestion+here%3E&amp;title=%3CSummarize+your+issues+here%3E&amp;labels=Area%3A+site+feedback">
+    <img src="./Dart packages_files/bug-report-white-96px.png" class="inline-icon" alt="Report an issue with this site" title="Report an issue with this site">
+  </a>
+</footer>
+<script type="application/ld+json">
+{"@context":"http://schema.org","@type":"WebSite","url":"https://pub.dev/","potentialAction":{"@type":"SearchAction","target":"https://pub.dev/packages?q={search_term_string}","query-input":"required name=search_term_string"}}
+</script>
+
+
+<iframe id="ssIFrame_google" sandbox="allow-scripts allow-same-origin" aria-hidden="true" frame-border="0" src="./Dart packages_files/iframe.html" style="position: absolute; width: 1px; height: 1px; inset: -9999px; display: none;" __idm_frm__="369"></iframe></body></html>

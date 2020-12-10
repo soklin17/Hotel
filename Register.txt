@@ -1,0 +1,46 @@
+body: Column (
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Padding(
+            padding: EdgeInsets.all(20.0),
+            child: CustomTextField (
+              controller: _usenameController,
+              hintText: "Usename",
+              prefixIcon: Icon(Icons.person_outline),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.all(20.0),
+            child: CustomTextField (
+              controller: _emailController,
+              hintText: "Email address",
+              prefixIcon: Icon(Icons.email),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+
+            child: CustomTextField(
+              keyboardType: TextInputType.phone,
+              controller: _passController,
+              hintText: "Password",
+              obscureText: _eyeOff,
+              prefixIcon: Icon(Icons.lock_outline),
+              suffixIcon: IconButton(
+                icon: Icon(_eyeOff ? Icons.visibility_off : Icons.visibility),
+                onPressed: (){
+                },
+              ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.all(20.0),
+            child: CustomButtom(
+              bgColor: Colors.blue,
+              title: "Register",
+              txtColor: Colors.white,
+              onTap: (){},
+            ),
+          ),
+        ],
+      ),
