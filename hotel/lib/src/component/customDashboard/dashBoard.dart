@@ -19,7 +19,7 @@ class _DashListState extends State<DashList> {
             children: <Widget>[
               Container(
                 width: 90,
-                height: 80,
+                height: 90,
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.only(

@@ -1,6 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:hotel/src/component/customTextfield.dart';
 import 'package:hotel/src/component/custombuttom.dart';
-
 import 'package:hotel/src/screen/loginscreen/login.dart';
 import 'package:hotel/src/screen/registerscreen/registerscreen.dart';
 
@@ -11,14 +12,9 @@ class ForgotPass extends StatefulWidget {
 
 class _ForgotPassState extends State<ForgotPass> {
   var _emailController = TextEditingController();
-
-  var _passController = TextEditingController();
-
-  bool _eyeOff = false;
-
-  bool saveAttempted = false;
-
   final form = GlobalKey<FormState>();
+  String email = '';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,58 +30,62 @@ class _ForgotPassState extends State<ForgotPass> {
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
               ),
             ),
-
-            //Email
             Padding(
               padding: const EdgeInsets.all(20.0),
-              child: TextFormField(
-                // onChanged: (textValue) {
-                //   setState(() {
-                //     email = textValue;
-                //   });
-                // },
-                autocorrect: true,
+              child: CustomTextFeild(
                 controller: _emailController,
-                validator: (String val) {
-                  if (val.isEmpty || !val.contains('soklin')) {
+                validator: (val) {
+                  if (val.isEmpty || !val.contains('@')) {
                     return 'Please enter valid email';
+                  } else {
+                    email = val;
                   }
+                  return null;
                 },
                 keyboardType: TextInputType.emailAddress,
-                decoration: InputDecoration(
-                  contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-                  hintText: "Email address",
-                  prefixIcon: Icon(Icons.email),
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(32.0)),
-                ),
+                hintText: "Email address",
+                prefixIcon: Icon(Icons.email),
               ),
             ),
-
-            // Text("Forgot password"),
-
-            //Sign in
-
+            // Padding(
+            //   padding: const EdgeInsets.all(20.0),
+            //   child: CustomTextField(
+            //
+            //     controller: _emailController,
+            //     validator: (val) {
+            //       if (val.isEmpty || !val.contains('@')) {
+            //         return 'Please enter valid email';
+            //       } return null;
+            //     },
+            //     keyboardType: TextInputType.emailAddress,
+            //     hintText: 'Emial address',
+            //     prefixIcon: Icon(Icons.email),
+            //
+            //
+            //   ),
+            // ),
             GestureDetector(
               child: Container(
                 child: Padding(
                   padding: EdgeInsets.only(left: 20.0, right: 20.0),
                   child: CustomButtom(
-                    bgColor: Colors.blue,
-                    title: "Sign In",
+                    bgColor: Color(0xff2043F5),
+                    title: "Forget Password",
                     txtColor: Colors.white,
-                    onTap: () {
+                    onTap: () async {
                       if (form.currentState.validate()) {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => Login()));
+                        FirebaseAuth.instance
+                            .sendPasswordResetEmail(email: email)
+                            .then(
+                              (value) =>  Navigator.push(context, MaterialPageRoute(builder: (context)=> LoginScreen())),
+                            );
+
                       }
                     },
                   ),
                 ),
               ),
             ),
-
-            //I havn't an account
             Container(
               child: FlatButton(
                 // textColor: Colors.blue,

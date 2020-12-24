@@ -8,9 +8,9 @@ class CustomFeatureDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(bottom: 15.0, top: 15),
-      width: 78.0,
-      height: 70.0,
+      // padding: EdgeInsets.only(left: 15.0),
+      width: 80.0,
+      height: 80.0,
       decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(10.0),
@@ -24,21 +24,20 @@ class CustomFeatureDetail extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            margin: const EdgeInsets.only(),
+            margin: const EdgeInsets.only(top: 15.0),
             child: Center(
-              child: Container(
-                margin: const EdgeInsets.only(top: 10.0),
                 child: icons,
               ),
-            ),
           ),
+
           Container(
-            margin: const EdgeInsets.only(top: 5.0),
+            margin: const EdgeInsets.only(top: 10.0),
             child: Text(
               "$title",
               style: TextStyle(fontSize: 12.0),
             ),
           ),
+
         ],
       ),
     );

@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:hotel/src/screen/homepageView/homepage.dart';
-import 'package:hotel/src/screen/loginscreen/login.dart';
+import 'custom_Navigationbar.dart';
 
 class Body extends StatefulWidget {
   @override
@@ -28,6 +27,7 @@ class _BodyState extends State<Body> {
               child: ListView(
                 children: <Widget>[
                   Container(
+
                     child: Image.asset('asset/image/store1.png'),
                   ),
                   Container(
@@ -55,21 +55,6 @@ class _BodyState extends State<Body> {
                       ),
                     ),
                   ),
-                  // Container(
-                  //   margin: const EdgeInsets.only(right: 320.0, top: 250.0),
-                  //   child: FlatButton(
-                  //     child: Text(
-                  //       'SKIP',
-                  //       style: TextStyle(color: Colors.black, fontSize: 20.0),
-                  //     ),
-                  //     onPressed: () {
-                  //       Navigator.push(
-                  //         context,
-                  //         MaterialPageRoute(builder: (context) => Bar()),
-                  //       );
-                  //     },
-                  //   ),
-                  // ),
                   Container(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -85,7 +70,7 @@ class _BodyState extends State<Body> {
                             onPressed: () {
                               Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) => Bar()),
+                                MaterialPageRoute(builder: (context) => BottomNavigatorBar()),
                               );
                             },
                           ),
@@ -166,9 +151,10 @@ class _BodyState extends State<Body> {
                   Container(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         Container(
-                          margin: EdgeInsets.only(top: 330.0, bottom: 80.0),
+                          margin: EdgeInsets.only(top: 330.0),
                           child: FlatButton(
                             child: Text(
                               'SKIP',
@@ -178,7 +164,7 @@ class _BodyState extends State<Body> {
                             onPressed: () {
                               Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) => Bar()),
+                                MaterialPageRoute(builder: (context) => BottomNavigatorBar()),
                               );
                             },
                           ),
@@ -309,7 +295,7 @@ class _BodyState extends State<Body> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => Login()),
+                                    builder: (context) => BottomNavigatorBar()),
                               );
                             },
                           ),

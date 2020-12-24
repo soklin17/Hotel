@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:hotel/src/screen/loginscreen/login.dart';
 import 'package:hotel/src/screen/screendetail/screenDetail.dart';
 
 class CustomCategory extends StatefulWidget {
@@ -8,9 +9,9 @@ class CustomCategory extends StatefulWidget {
   String price;
   String address;
   String ratting;
-
+String description;
   CustomCategory(
-      {this.title, this.imgUrl, this.price, this.address, this.ratting});
+      {this.title, this.imgUrl, this.price, this.address, this.ratting,this.description});
 
   @override
   _CustomCategoryState createState() => _CustomCategoryState();
@@ -28,130 +29,113 @@ class _CustomCategoryState extends State<CustomCategory> {
                   address: widget.address,
                   price: widget.price,
                   ratting: widget.ratting,
-                )));
+              description: widget.description,
+                ),),);
       },
-      child: Column(
-        children: [
-          Container(
-            width: double.infinity,
-            height: 200.0,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(widget.imgUrl),
-                fit: BoxFit.cover,
+      child:  Container(
+
+        decoration: BoxDecoration(borderRadius: BorderRadius.only(
+          topRight: Radius.circular(14.0),
+          topLeft: Radius.circular(14.0),
+          bottomRight: Radius.circular(14.0),bottomLeft: Radius.circular(14.0),
+        ),
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black12,
+              blurRadius: 5.0,
+              offset: Offset(0.0, 0.0),
+            ),
+          ],),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              width: double.infinity,
+              height: 200.0,
+              decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(widget.imgUrl),
+                    fit: BoxFit.cover,
+                  ),
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(14),
+                    topRight: Radius.circular(14),
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black12,
+                      blurRadius: 5.0,
+                      offset: Offset(0.0, 0.0),
+                    ),
+                  ],
+                  color: Colors.red
               ),
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(20),
-                topRight: Radius.circular(20),
-              ),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black26,
-                  blurRadius: 5.0,
-                  offset: Offset(0.0, 0.0),
+            ),
+            Row(
+              children: [
+                Container(
+                    margin: EdgeInsets.only(left:15.0,top: 15.0),
+                    child: Text(widget.title,style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
+                ),
+                Spacer(),
+                Container(
+                  margin: EdgeInsets.only(top: 15.0,right: 20.0),
+                  child: Text(widget.price,style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),),
+              ],
+            ),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                 Container(
+                     margin: EdgeInsets.only(top:5.0,left: 11.0),
+                     child: Icon(Icons.location_on,size: 20.0)),
+                
+                Expanded(
+
+                    child: Container(
+                      margin: EdgeInsets.only(top: 10.0,left: 5.0),
+                      child: Text(widget.address,
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 1,
+                      ),
+                    ),
                 ),
               ],
             ),
-          ),
-          Container(
-            width: double.infinity,
-            height: 80.0,
-            decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(20.0),
-                  bottomRight: Radius.circular(20.0),
+            Row(
+              children: [
+                Container(
+                    margin: EdgeInsets.only(left: 11.0,bottom: 10.0),
+                    child: Icon(Icons.star,size: 20,)),
+                Expanded(
+                  child: Container(
+                    margin: EdgeInsets.only(left: 5.0,bottom: 7.0),
+                    child: Text(widget.ratting,
+                      overflow: TextOverflow.ellipsis,),),
                 ),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black26,
-                    blurRadius: 4.0,
-                    offset: Offset(0.0, 0.0),
-                  ),
-                ]),
-            child: Container(
-              child: Column(
-                children: <Widget>[
-                  Container(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        //left
-                        Column(
-                          children: <Widget>[
-                            Container(
-                              width: 150,
-                              child: Text(
-                                widget.title,
-                                style: TextStyle(
-                                    fontSize: 18, fontWeight: FontWeight.bold),
-                              ),
-                              margin:
-                                  const EdgeInsets.only(left: 10.0, top: 1.0),
-                            ),
-                            Container(
-                              margin: EdgeInsets.only(right: 50.0, top: 5.0),
-                              child: Row(
-                                children: <Widget>[
-                                  Container(
-                                      child: Icon(
-                                    Icons.location_on,
-                                    size: 15.0,
-                                  )),
-                                  Text(widget.address),
-                                ],
-                              ),
-                            ),
-                            Container(
-                              margin: EdgeInsets.only(
-                                  right: 50.0, top: 5.0, bottom: 5.0),
-                              child: Row(
-                                children: <Widget>[
-                                  Container(
-                                      child: Icon(
-                                    Icons.star_half,
-                                    size: 15.0,
-                                  )),
-                                  Text(widget.ratting),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                        //Right
-                        Column(
-                          children: <Widget>[
-                            Container(
-                              padding: EdgeInsets.only(left: 70.0),
-                              child: Text(
-                                widget.price,
-                                style: TextStyle(
-                                    fontSize: 18, fontWeight: FontWeight.bold),
-                              ),
-                              margin:
-                                  const EdgeInsets.only(top: 5.0, right: 15.0),
-                            ),
-                            Container(
-                              margin: EdgeInsets.only(right: 15.0),
-                              child: RaisedButton(
-                                child: Text(
-                                  "BOOK NOW",
-                                  style: TextStyle(color: Colors.blue),
-                                ),
-                                onPressed: () {},
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
+                Spacer(),
+                Container(
+                  margin: EdgeInsets.only(right: 15.0),
+                  child: RaisedButton(
+                    child: Text(
+                      "BOOK NOW",
+                      style: TextStyle(color: Colors.blue,fontWeight: FontWeight.bold),
                     ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => LoginScreen()),
+                      );
+                    },
                   ),
-                  //Right
-                ],
-              ),
+                ),
+              ],
             ),
-          ),
-        ],
+            SizedBox(height: 10.0,)
+          ],
+        ),
       ),
     );
   }

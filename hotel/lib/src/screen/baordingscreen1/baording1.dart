@@ -2,9 +2,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hotel/src/component/body.dart';
-import 'package:hotel/src/component/customTextfield.dart';
-import 'package:hotel/src/component/custombuttom.dart';
-import 'package:hotel/src/screen/loginscreen/login.dart';
 
 void main(){
   runApp(OnBaording());

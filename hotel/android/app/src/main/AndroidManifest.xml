@@ -4,7 +4,17 @@
          In most cases you can leave this as-is, but you if you want to provide
          additional functionality it is fine to subclass or reimplement
          FlutterApplication and put your custom class here. -->
-  <application android:name="io.flutter.app.FlutterApplication" android:label="hotel" android:icon="@mipmap/ic_launcher">
+  <application>
+
+    <provider
+        android:name="androidx.core.content.FileProvider"
+        android:authorities="${applicationId}.provider"
+        android:exported="false"
+        android:grantUriPermissions="true">
+      <meta-data
+          android:name="android.support.FILE_PROVIDER_PATHS"
+          android:resource="@xml/provider_paths"/>
+    </provider>
 
     <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyA5rEuWtSud2-IFo_nYqHqz7kcI-bSFBBY"/>
 

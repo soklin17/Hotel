@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hotel/src/component/customTextfield.dart';
@@ -43,89 +44,69 @@ class _RegisterState extends State<Register> {
               ),
               Padding(
                 padding:
-                    const EdgeInsets.only(left: 10.0, right: 10.0, top: 20.0),
-                child: TextFormField(
-                  autocorrect: true,
+                    const EdgeInsets.only(left: 0.0, right: 0.0, top: 20.0),
+                child: CustomTextFeild(
+
                   controller: _usenameController,
                   validator: (String val) {
                     if (val.isEmpty || !val.contains('')) {
                       return 'Please enter usename';
                     }
                   },
-                  decoration: InputDecoration(
-                    contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
                     hintText: "Usename",
                     prefixIcon: Icon(Icons.person),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(32.0)),
-                  ),
+
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.only(
-                    left: 10.0, right: 10, top: 20.0, bottom: 20),
-                child: TextFormField(
-                  autocorrect: true,
+                    left: 0.0, right: 0, top: 20.0, bottom: 20),
+                child: CustomTextFeild(
                   keyboardType: TextInputType.emailAddress,
                   controller: _emailsController,
-                  // validator: (String val) {
-                  //   if (val.isEmpty || !val.contains('@')) {
-                  //     return 'Please enter valid email';
-                  //   }
-                  // },
-                  validator: (value) =>
-                      value.isEmpty ? 'Please enter your email' : null,
-                  decoration: InputDecoration(
-                    contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+                  
+                  // validator: (value) =>
+                  //     value.isEmpty ? 'Please enter your email' : null,
                     hintText: "Email address",
                     prefixIcon: Icon(Icons.email),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(32.0)),
-                  ),
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 10.0, right: 10.0),
-                child: TextFormField(
-                  autocorrect: true,
+                padding: const EdgeInsets.only(left: 0.0, right: 0.0),
+                child: CustomTextFeild(
                   obscureText: _eyeOff,
                   controller: _passwordController,
                   validator: (val) {
-                    if (val.isEmpty || !val.contains('')) {
+                    if (val.isEmpty || val.length <= 5) {
                       return 'Make sure your password!';
                     }
                   },
-                  decoration: InputDecoration(
-                    contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
                     hintText: "Password",
                     prefixIcon: Icon(Icons.lock),
-                    suffixIcon: IconButton(
-                      icon: Icon(
-                          _eyeOff ? Icons.visibility_off : Icons.visibility),
-                      onPressed: () {
-                        setState(() {
-                          _eyeOff = !_eyeOff;
-                        });
-                      },
-                    ),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(32.0)),
+                  suffixIcon: IconButton(
+                    icon:
+                    Icon(_eyeOff ? Icons.visibility : Icons.visibility_off),
+                    onPressed: () {
+                      setState(() {
+                        _eyeOff = !_eyeOff;
+                      });
+                    },
+                  ),
                   ),
                 ),
-              ),
               Padding(
-                padding: const EdgeInsets.only(left: 10.0, right: 10.0),
+                padding: const EdgeInsets.only(left: 0.0, right: 0.0),
                 child: Container(
                   child: Padding(
                     padding: EdgeInsets.only(top: 20.0),
                     child: CustomButtom(
-                      bgColor: Colors.blue,
+                      bgColor: Color(0xff2043F5),
                       title: "Register",
                       txtColor: Colors.white,
-                      onTap: () {
+                      onTap: () async {
                         if (form.currentState.validate()) {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (context) => Login()));
+                          await register(_emailsController.text,
+                              _passwordController.text, context);
                         }
                       },
                     ),
@@ -141,8 +122,7 @@ class _RegisterState extends State<Register> {
                   ),
                   onPressed: () {
                     Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => Login()),
+                      context, MaterialPageRoute(builder: (context) => LoginScreen()),
                     );
                   },
                 ),
@@ -152,5 +132,23 @@ class _RegisterState extends State<Register> {
         ),
       ),
     );
+  }
+}
+
+Future<void> register(String email, String pass, BuildContext context) async {
+  FirebaseAuth auth = FirebaseAuth.instance;
+  try {
+    UserCredential userCredential = await FirebaseAuth.instance
+        .createUserWithEmailAndPassword(email: email, password: pass);
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => LoginScreen()));
+  } on FirebaseAuthException catch (e) {
+    if (e.code == 'weak-password') {
+      print('The password provided is too weak.');
+    } else if (e.code == 'email-already-in-use') {
+      print('The account already exists for that email.');
+    }
+  } catch (e) {
+    print(e);
   }
 }

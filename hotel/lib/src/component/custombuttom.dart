@@ -5,10 +5,11 @@ final String title;
 final Function onTap;
 final Color bgColor;
 final Color txtColor;
+final Function onPress;
   const CustomButtom({this.title,
     this.onTap,
     this.bgColor,
-    this.txtColor}) ;
+    this.txtColor, this.onPress}) ;
   @override
   Widget build(BuildContext context) {
     return InkWell(
